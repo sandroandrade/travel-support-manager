@@ -1,7 +1,4 @@
 <div class="loginColumns animated fadeInDown">
-<%= link_to 'Destroy', "/users/sign_out",
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
     <div class="row">
 
         <div class="col-md-6">
@@ -26,14 +23,21 @@
         </div>
         <div class="col-md-6">
             <div class="ibox-content">
-                <form class="m-t" role="form" action="index.html">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Username" required="">
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "m-t", role: "form") do |f| %>
+                    <div class="form-group field">
+                        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Username", required: "" %>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" required="">
+                    <div class="form-group field">
+                        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password", required: "" %>
                     </div>
-                    <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                    <% if devise_mapping.rememberable? -%>
+                        <div class="form-group field">
+                            <label><%= f.check_box :remember_me, class: "i-checks" %> Remember me </label>
+                        </div>
+                    <% end -%>
+                    <div class="actions">
+                        <%= f.submit "Log in", class: "btn btn-primary block full-width m-b" %>
+                    </div>
 
                     <a href="#">
                         <small>Forgot password?</small>
@@ -43,7 +47,7 @@
                         <small>Do not have an account?</small>
                     </p>
                     <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
-                </form>
+                <% end %>
                 <p class="m-t">
                     <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>
                 </p>
@@ -60,3 +64,5 @@
         </div>
     </div>
 </div>
+
+<%= render "devise/shared/links" %>
