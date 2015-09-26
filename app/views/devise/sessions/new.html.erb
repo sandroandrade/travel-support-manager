@@ -23,6 +23,16 @@
         </div>
         <div class="col-md-6">
             <div class="ibox-content">
+                <% unless notice.nil? %>
+                    <div class="notice alert alert-warning">
+                        <%= notice %>
+                    </div>
+                <% end %>
+                <% unless alert.nil? %>
+                    <div class="alert alert alert-danger">
+                        <%= alert %>
+                    </div>
+                <% end %>
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "m-t", role: "form") do |f| %>
                     <div class="form-group field">
                         <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Username", required: "" %>

@@ -13,12 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-
-//= jquery-2.1.1
-//= bootstrap.min
-//= jquery.metisMenu
-//= jquery.slimscroll.min
-//= inspinia
-//= pace.min
-
 //= require_tree .
