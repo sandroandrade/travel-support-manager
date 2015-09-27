@@ -48,3 +48,4 @@ end
 gem 'devise'
 gem 'net-ldap'
 gem 'font-awesome-rails'
+gem 'icheck-rails'

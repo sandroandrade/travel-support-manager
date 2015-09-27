@@ -7,21 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="gray-bg"> 
-<!--
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
--->
-<%= yield %>
 
-    <!-- iCheck -->
-    <script src="/js/plugins/iCheck/icheck.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('.i-checks').iCheck({
-                    checkboxClass: 'icheckbox_square-green',
-                    radioClass: 'iradio_square-green',
-                });
-            });
-        </script>
+    <%= yield %>
+
 </body>
 </html>
