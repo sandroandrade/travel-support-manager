@@ -15,7 +15,7 @@
                             <li><a href="contacts.html">Contacts</a></li>
                             <li><a href="mailbox.html">Mailbox</a></li>
                             <li class="divider"></li>
-                            <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Logout</a></li>
+                            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
                         </ul>
                     </div>
                     <div class="logo-element">
@@ -331,11 +331,7 @@
                 </li>
 
 
-                <li>
-                    <a href="/users/sign_out" data-method="delete" rel="nofollow">
-                        <i class="fa fa-sign-out"></i> Log out
-                    </a>
-                </li>
+                <li><%= link_to '<i class="fa fa-sign-out"></i> Log out'.html_safe, destroy_user_session_path, :method => :delete %></li>
             </ul>
 
         </nav>
